@@ -11,7 +11,7 @@ pdf: filter
 	pandoc -t latex --filter ./pandoc-crossref.hs -o output.pdf -i demo.md
 
 latex: filter
-	pandoc -t latex --filter ./pandoc-crossref.hs -o output.latex -i demo.md
+	pandoc -t latex --filter ./pandoc-crossref.hs -o output.latex -i demo.md --chapters
 
 html: filter
 	pandoc -t html --filter ./pandoc-crossref.hs -o output.html -i demo.md

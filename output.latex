@@ -3,7 +3,7 @@ cross-reference figures (see fig.
  \ref{figure1}, \ref{figure2}, \ref{figure3}), display equations (see
 eq.  \ref{eqn1}) and tables (see tbl.  \ref{table1})
 
-\section{Chapter 1. Figures}\label{chapter-1.-figures}
+\chapter{Chapter 1. Figures}\label{chapter-1.-figures}
 
 \begin{figure}[htbp]
 \centering
@@ -29,11 +29,11 @@ eq.  \ref{eqn1}) and tables (see tbl.  \ref{table1})
 \caption{Unlabelled image}
 \end{figure}
 
-\section{Chapter 2. Equations}\label{chapter-2.-equations}
+\chapter{Chapter 2. Equations}\label{chapter-2.-equations}
 
 \begin{equation} P_i(x) = \sum_i a_i x^i \label{eqn1}\end{equation}
 
-\section{Chapter 3. Tables}\label{chapter-3.-tables}
+\chapter{Chapter 3. Tables}\label{chapter-3.-tables}
 
 \begin{longtable}[c]{@{}ll@{}}
 \caption{\label{table1}Table example }\tabularnewline
@@ -62,7 +62,7 @@ Content Cell & Content Cell\tabularnewline
 \bottomrule
 \end{longtable}
 
-\section{Chapter 4. Reference lists}\label{chapter-4.-reference-lists}
+\chapter{Chapter 4. Reference lists}\label{chapter-4.-reference-lists}
 
 It's also possible to show lists of figures and tables, like this:
 
