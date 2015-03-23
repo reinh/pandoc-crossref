@@ -8,6 +8,7 @@ clean:
 	git rm -f pandoc-crossref.hs
 
 pdf: filter
+	pandoc --filter ./pandoc-crossref.hs -o output-test.pdf -i demo.md
 	pandoc -t latex --filter ./pandoc-crossref.hs -o output.pdf -i demo.md
 	pandoc -t latex --filter ./pandoc-crossref.hs -o output-chapters.pdf -i demo.md --chapters
 	pandoc -t latex --filter ./pandoc-crossref.hs -o output-cref.pdf -i demo.md -M cref=True -H cleveref.tex
