@@ -61,27 +61,28 @@
 \begin{document}
 
 This is a demo file for pandoc-crossref. With this filter, you can
-cross-reference figures (see  \cref{figure1,figure2,figure3}), display
-equations (see  \cref{eqn1}) and tables (see  \cref{table1})
+cross-reference figures (see
+ \cref{fig:figure1,fig:figure2,fig:figure3}), display equations (see
+ \cref{eq:eqn1}) and tables (see  \cref{tbl:table1})
 
 \section{Chapter 1. Figures}\label{chapter-1.-figures}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{img1.jpg}
-\caption{\label{figure1}First figure}
+\caption{\label{fig:figure1}First figure}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{img2.jpg}
-\caption{\label{figure2}Second figure}
+\caption{\label{fig:figure2}Second figure}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{img3.jpg}
-\caption{\label{figure3}Third figure}
+\caption{\label{fig:figure3}Third figure}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -92,12 +93,12 @@ equations (see  \cref{eqn1}) and tables (see  \cref{table1})
 
 \section{Chapter 2. Equations}\label{chapter-2.-equations}
 
-\begin{equation} P_i(x) = \sum_i a_i x^i \label{eqn1}\end{equation}
+\begin{equation} P_i(x) = \sum_i a_i x^i \label{eq:eqn1}\end{equation}
 
 \section{Chapter 3. Tables}\label{chapter-3.-tables}
 
 \begin{longtable}[c]{@{}ll@{}}
-\caption{\label{table1}Table example }\tabularnewline
+\caption{\label{tbl:table1}Table example }\tabularnewline
 \toprule
 First Header & Second Header\tabularnewline
 \midrule
