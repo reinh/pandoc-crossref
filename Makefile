@@ -8,10 +8,10 @@ clean:
 	git rm -f pandoc-crossref.hs
 
 pdf: filter
-	pandoc -t latex --filter ./pandoc-crossref.hs -o output.pdf -i demo.md
+	pandoc -t latex --filter ./pandoc-crossref.hs -o output.pdf -i demo.md --chapters
 
 latex: filter
-	pandoc -t latex --filter ./pandoc-crossref.hs -o output.latex -i demo.md --chapters
+	pandoc -t latex --filter ./pandoc-crossref.hs -o output.latex -i demo.md
 
 html: filter
 	pandoc -t html --filter ./pandoc-crossref.hs -o output.html -i demo.md
