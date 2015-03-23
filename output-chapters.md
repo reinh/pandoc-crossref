@@ -5,18 +5,18 @@ cross-reference figures (see fig. 1.1-1.3), display equations (see eq.
 Chapter 1. Figures
 ==================
 
-![Figure \# 1: First figure](img1.jpg)
+![Figure \# 1.1: First figure](img1.jpg)
 
-![Figure \# 2: Second figure](img2.jpg)
+![Figure \# 1.2: Second figure](img2.jpg)
 
-![Figure \# 3: Third figure](img3.jpg)
+![Figure \# 1.3: Third figure](img3.jpg)
 
 ![Unlabelled image](img1.jpg)
 
 Chapter 2. Equations
 ====================
 
-$$ P_i(x) = \sum_i a_i x^i \qquad(1)$$
+$$ P_i(x) = \sum_i a_i x^i \qquad(2.1)$$
 
 Chapter 3. Tables
 =================
@@ -26,7 +26,7 @@ Chapter 3. Tables
   Content Cell   Content Cell
   Content Cell   Content Cell
 
-  : Table 1: Table example
+  : Table 3.1: Table example
 
 Table without caption:
 
