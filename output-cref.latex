@@ -1,0 +1,135 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\date{}
+\usepackage{cleveref}
+
+\begin{document}
+
+This is a demo file for pandoc-crossref. With this filter, you can
+cross-reference figures (see fig.  \cref{figure1,figure2,figure3}),
+display equations (see eq.  \cref{eqn1}) and tables (see tbl.
+ \cref{table1})
+
+\section{Chapter 1. Figures}\label{chapter-1.-figures}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{img1.jpg}
+\caption{\label{figure1}First figure}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{img2.jpg}
+\caption{\label{figure2}Second figure}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{img3.jpg}
+\caption{\label{figure3}Third figure}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{img1.jpg}
+\caption{Unlabelled image}
+\end{figure}
+
+\section{Chapter 2. Equations}\label{chapter-2.-equations}
+
+\begin{equation} P_i(x) = \sum_i a_i x^i \label{eqn1}\end{equation}
+
+\section{Chapter 3. Tables}\label{chapter-3.-tables}
+
+\begin{longtable}[c]{@{}ll@{}}
+\caption{\label{table1}Table example }\tabularnewline
+\toprule
+First Header & Second Header\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+First Header & Second Header\tabularnewline
+\midrule
+\endhead
+Content Cell & Content Cell\tabularnewline
+Content Cell & Content Cell\tabularnewline
+\bottomrule
+\end{longtable}
+
+Table without caption:
+
+\begin{longtable}[c]{@{}ll@{}}
+\toprule
+First Header & Second Header\tabularnewline
+\midrule
+\endhead
+Content Cell & Content Cell\tabularnewline
+Content Cell & Content Cell\tabularnewline
+\bottomrule
+\end{longtable}
+
+\section{Chapter 4. Reference lists}\label{chapter-4.-reference-lists}
+
+It's also possible to show lists of figures and tables, like this:
+
+\listoffigures
+
+\listoftables
+
+\end{document}
