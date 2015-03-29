@@ -98,7 +98,7 @@ cross-reference figures (see
 \section{Chapter 3. Tables}\label{chapter-3.-tables}
 
 \begin{longtable}[c]{@{}ll@{}}
-\caption{\label{tbl:table1}}\tabularnewline
+\caption{\label{tbl:table1}Table example }\tabularnewline
 \toprule
 First Header & Second Header\tabularnewline
 \midrule
