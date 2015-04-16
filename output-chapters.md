@@ -1,6 +1,6 @@
 This is a demo file for pandoc-crossref. With this filter, you can
-cross-reference figures (see fig. 1.1-1.3), display equations (see eq.
-2.1) and tables (see tbl. 3.1)
+cross-reference figures (see fig. 1.1-1.3), display equations (see
+eq. 2.1) and tables (see tbl. 3.1)
 
 Chapter 1. Figures
 ==================
