@@ -18,8 +18,8 @@ latex: filter
 	pandoc -t latex --filter pandoc-crossref -o output-cref.latex -i demo.md -M cref=True -H cleveref.tex
 
 html: filter
-	pandoc -t html --filter pandoc-crossref -o output.html -i demo.md
-	pandoc -t html --filter pandoc-crossref -o output-chapters.html -i demo.md -M chapters=True
+	pandoc -s -t html --filter pandoc-crossref -o output.html -i demo.md
+	pandoc -s -t html --filter pandoc-crossref -o output-chapters.html -i demo.md -M chapters=True
 
 md: filter
 	pandoc -t markdown --filter pandoc-crossref -o output.md -i demo.md
