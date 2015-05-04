@@ -1,7 +1,7 @@
 This is a demo file for pandoc-crossref. With this filter, you can
 cross-reference figures (see
-fig.~ \ref{fig:figure1}, \ref{fig:figure2}, \ref{fig:figure3}), display
-equations (see eq.~ \ref{eq:eqn1}) and tables (see
+fig.~ \ref{fig:figure1},  \ref{fig:figure2},  \ref{fig:figure3}),
+display equations (see eq.~ \ref{eq:eqn1}) and tables (see
 tbl.~ \ref{tbl:table1})
 
 \section{Chapter 1. Figures}\label{chapter-1.-figures}

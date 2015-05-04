@@ -62,7 +62,7 @@
 
 This is a demo file for pandoc-crossref. With this filter, you can
 cross-reference figures (see
- \cref{fig:figure1,fig:figure2,fig:figure3}), display equations (see
+ \cref{fig:figure1, fig:figure2, fig:figure3}), display equations (see
  \cref{eq:eqn1}) and tables (see  \cref{tbl:table1})
 
 \section{Chapter 1. Figures}\label{chapter-1.-figures}
