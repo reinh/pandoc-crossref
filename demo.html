@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<p>This is a demo file for pandoc-crossref. With this filter, you can cross-reference figures (see <span class="citation">[@fig:figure1;@fig:figure2;@fig:figure3]</span>), display equations (see <span class="citation">@eq:eqn1</span>) and tables (see <span class="citation">[@tbl:table1]</span>)</p>
+<h1 id="chapter-1.-figures">Chapter 1. Figures</h1>
+<p><img src="img1.jpg" alt="First figure" />{#fig:figure1}</p>
+<p><img src="img2.jpg" alt="Second figure" />{#fig:figure2}</p>
+<p><img src="img3.jpg" alt="Third figure" />{#fig:figure3}</p>
+<div class="figure">
+<img src="img1.jpg" alt="Unlabelled image" />
+<p class="caption">Unlabelled image</p>
+</div>
+<h1 id="chapter-2.-equations">Chapter 2. Equations</h1>
+<p><br /><span class="math"><em>P</em><sub><em>i</em></sub>(<em>x</em>) = ∑<sub><em>i</em></sub><em>a</em><sub><em>i</em></sub><em>x</em><sup><em>i</em></sup></span><br /> {#eq:eqn1}</p>
+<h1 id="chapter-3.-tables">Chapter 3. Tables</h1>
+<table>
+<caption>Table example {#tbl:table1}</caption>
+<thead>
+<tr class="header">
+<th align="left">First Header</th>
+<th align="left">Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Content Cell</td>
+<td align="left">Content Cell</td>
+</tr>
+<tr class="even">
+<td align="left">Content Cell</td>
+<td align="left">Content Cell</td>
+</tr>
+</tbody>
+</table>
+<p>Table without caption:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">First Header</th>
+<th align="left">Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Content Cell</td>
+<td align="left">Content Cell</td>
+</tr>
+<tr class="even">
+<td align="left">Content Cell</td>
+<td align="left">Content Cell</td>
+</tr>
+</tbody>
+</table>
+<h1 id="chapter-4.-reference-lists">Chapter 4. Reference lists</h1>
+<p>It's also possible to show lists of figures and tables, like this:</p>
+<p></p>
+<p></p>
+</body>
+</html>
