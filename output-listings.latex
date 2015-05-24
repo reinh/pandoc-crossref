@@ -68,52 +68,46 @@ Content Cell & Content Cell\tabularnewline
 \section{Chapter 4. Code blocks}\label{chapter-4.-code-blocks}
 
 There are a couple options for code block labels. Those work only if
-code block id starts with \texttt{lst:}, e.g. \texttt{\{\#lst:label\}}
+code block id starts with \lstinline!lst:!, e.g.
+\lstinline!{#lst:label}!
 
-\subsection{\texorpdfstring{\texttt{caption}
+\subsection{\texorpdfstring{\lstinline!caption!
 attribute}{caption attribute}}\label{caption-attribute}
 
-\texttt{caption} attribute will be treated as code block caption. If
-code block has both id and \texttt{caption} attributes, it will be
+\lstinline!caption! attribute will be treated as code block caption. If
+code block has both id and \lstinline!caption! attributes, it will be
 treated as numbered code block.
 
-\hyperdef{}{lst:captionAttr}{\label{lst:captionAttr}}
-\begin{Shaded}
-\begin{Highlighting}[]
-\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
-\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
-\end{Highlighting}
-\end{Shaded}
+\begin{lstlisting}[language=Haskell, caption=Listing caption, label=lst:captionAttr]
+main :: IO ()
+main = putStrLn "Hello World!"
+\end{lstlisting}
 
 \pagebreak
 
 \subsection{Table-style captions}\label{table-style-captions}
 
-Enabled with \texttt{codeBlockCaptions} metadata option. If code block
-is immediately adjacent to paragraph, starting with \texttt{Listing:} or
-\texttt{:}, said paragraph will be treated as code block caption.
+Enabled with \lstinline!codeBlockCaptions! metadata option. If code
+block is immediately adjacent to paragraph, starting with
+\lstinline!Listing:! or \lstinline!:!, said paragraph will be treated as
+code block caption.
 
-\hyperdef{}{lst:tableCaption}{\label{lst:tableCaption}}
-\begin{Shaded}
-\begin{Highlighting}[]
-\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
-\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
-\end{Highlighting}
-\end{Shaded}
+\begin{lstlisting}[language=Haskell, caption=Listing caption, label=lst:tableCaption]
+main :: IO ()
+main = putStrLn "Hello World!"
+\end{lstlisting}
 
 \subsection{Wrapping div}\label{wrapping-div}
 
-Wrapping code block without label in a div with id \texttt{lst:...} and
-class, starting with \texttt{listing}, and adding paragraph before code
-block, but inside div, will treat said paragraph as code block caption.
+Wrapping code block without label in a div with id \lstinline!lst:...!
+and class, starting with \lstinline!listing!, and adding paragraph
+before code block, but inside div, will treat said paragraph as code
+block caption.
 
-\hyperdef{}{lst:wrappingDiv}{\label{lst:wrappingDiv}}
-\begin{Shaded}
-\begin{Highlighting}[]
-\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
-\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
-\end{Highlighting}
-\end{Shaded}
+\begin{lstlisting}[language=Haskell, caption=Listing caption, label=lst:wrappingDiv]
+main :: IO ()
+main = putStrLn "Hello World!"
+\end{lstlisting}
 
 \section{Chapter 5. Reference lists}\label{chapter-5.-reference-lists}
 
