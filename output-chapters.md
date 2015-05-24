@@ -116,3 +116,10 @@ List of Tables
 
 1.  Table example
 
+List of Listings
+================
+
+1.  Listing caption
+2.  Listing caption
+3.  Listing caption
+
