@@ -28,7 +28,7 @@ Chapter 3. Tables
   Content Cell   Content Cell
   Content Cell   Content Cell
 
-  : *Figure \# 1*: Table example
+  : *Table 1*: Table example
 
 Table without caption:
 

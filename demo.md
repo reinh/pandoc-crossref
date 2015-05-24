@@ -2,7 +2,6 @@
 cref: False
 codeBlockCaptions: True
 figureTitle: "Figure \\#"
-tableTitle: "Figure \\#"
 lofTitle: "## List of Figures"
 lotTitle: "## List of Tables"
 tableTemplate: "*$$tableTitle$$ $$i$$*$$titleDelim$$ $$t$$"

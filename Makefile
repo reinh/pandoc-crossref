@@ -1,7 +1,7 @@
-all: demo.md pdf latex html md
+all: demomd pdf latex html md
 	git commit -a -m "Update examples"
 
-demo.md:
+demomd:
 	git checkout master demo.md
 
 pdf:
