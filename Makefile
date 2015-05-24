@@ -1,11 +1,8 @@
-all: filter pdf latex html md clean
+all: filter pdf latex html md
 	git commit -a -m "Update examples"
 
 filter:
-	git checkout master pandoc-crossref.hs demo.md
-
-clean:
-	git rm -f pandoc-crossref.hs
+	git checkout master demo.md
 
 pdf: filter
 	pandoc -t latex --filter pandoc-crossref -o output.pdf -i demo.md
