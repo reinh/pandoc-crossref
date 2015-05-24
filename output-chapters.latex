@@ -1,7 +1,10 @@
 This is a demo file for pandoc-crossref. With this filter, you can
 cross-reference figures (see
-fig.~\ref{fig:figure1}, \ref{fig:figure2}, \ref{fig:figure3}), display
+figs.~\ref{fig:figure1}, \ref{fig:figure2}, \ref{fig:figure3}), display
 equations (see eq.~\ref{eq:eqn1}) and tables (see tbl.~\ref{tbl:table1})
+
+There is also support for code blocks, for example,
+lsts.~\ref{lst:captionAttr}, \ref{lst:tableCaption}, \ref{lst:wrappingDiv}
 
 \chapter{Chapter 1. Figures}\label{chapter-1.-figures}
 
@@ -62,7 +65,74 @@ Content Cell & Content Cell\tabularnewline
 \bottomrule
 \end{longtable}
 
-\chapter{Chapter 4. Reference lists}\label{chapter-4.-reference-lists}
+\chapter{Chapter 4. Code blocks}\label{chapter-4.-code-blocks}
+
+There are a couple options for code block labels. Those work only if
+code block id starts with \texttt{lst:}, e.g. \texttt{\{\#lst:label\}}
+
+\section{\texorpdfstring{\texttt{caption}
+attribute}{caption attribute}}\label{caption-attribute}
+
+\texttt{caption} attribute will be treated as code block caption. If
+code block has both id and \texttt{caption} attributes, it will be
+treated as numbered code block.
+
+\begin{codelisting}
+\caption{Listing caption}
+
+\hyperdef{}{lst:captionAttr}{\label{lst:captionAttr}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
+\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
+\end{Highlighting}
+\end{Shaded}
+
+\end{codelisting}
+
+\pagebreak
+
+\section{Table-style captions}\label{table-style-captions}
+
+Enabled with \texttt{codeBlockCaptions} metadata option. If code block
+is immediately adjacent to paragraph, starting with \texttt{Listing:} or
+\texttt{:}, said paragraph will be treated as code block caption.
+
+\begin{codelisting}
+
+\caption{Listing caption}
+
+\hyperdef{}{lst:tableCaption}{\label{lst:tableCaption}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
+\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
+\end{Highlighting}
+\end{Shaded}
+
+\end{codelisting}
+
+\section{Wrapping div}\label{wrapping-div}
+
+Wrapping code block without label in a div with id \texttt{lst:...} and
+class, starting with \texttt{listing}, and adding paragraph before code
+block, but inside div, will treat said paragraph as code block caption.
+
+\begin{codelisting}
+
+\caption{Listing caption}
+
+\hyperdef{}{lst:wrappingDiv}{\label{lst:wrappingDiv}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
+\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
+\end{Highlighting}
+\end{Shaded}
+
+\end{codelisting}
+
+\chapter{Chapter 5. Reference lists}\label{chapter-5.-reference-lists}
 
 It's also possible to show lists of figures and tables, like this:
 

@@ -10,12 +10,12 @@ clean:
 pdf: filter
 	pandoc -t latex --filter pandoc-crossref -o output.pdf -i demo.md
 	pandoc -t latex --filter pandoc-crossref -o output-chapters.pdf -i demo.md --chapters
-	pandoc -t latex --filter pandoc-crossref -o output-cref.pdf -i demo.md -M cref=True -H cleveref.tex
+	pandoc -t latex --filter pandoc-crossref -o output-cref.pdf -i demo.md -M cref=True
 
 latex: filter
 	pandoc -t latex --filter pandoc-crossref -o output.latex -i demo.md
 	pandoc -t latex --filter pandoc-crossref -o output-chapters.latex -i demo.md --chapters
-	pandoc -t latex --filter pandoc-crossref -o output-cref.latex -i demo.md -M cref=True -H cleveref.tex
+	pandoc -t latex --filter pandoc-crossref -o output-cref.latex -i demo.md -M cref=True
 
 html: filter
 	pandoc -s -t html --filter pandoc-crossref -o output.html -i demo.md

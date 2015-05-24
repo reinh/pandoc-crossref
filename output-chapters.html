@@ -6,9 +6,30 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
 </head>
 <body>
-<p>This is a demo file for pandoc-crossref. With this filter, you can cross-reference figures (see fig. 1.1-1.3), display equations (see eq. 2.1) and tables (see tbl. 3.1)</p>
+<p>This is a demo file for pandoc-crossref. With this filter, you can cross-reference figures (see figs. 1.1-1.3), display equations (see eq. 2.1) and tables (see tbl. 3.1)</p>
+<p>There is also support for code blocks, for example, lsts. 4.1-4.3</p>
 <h1 id="chapter-1.-figures">Chapter 1. Figures</h1>
 <div class="figure">
 <img src="img1.jpg" alt="Figure # 1.1: First figure" />
@@ -67,7 +88,31 @@
 </tr>
 </tbody>
 </table>
-<h1 id="chapter-4.-reference-lists">Chapter 4. Reference lists</h1>
+<h1 id="chapter-4.-code-blocks">Chapter 4. Code blocks</h1>
+<p>There are a couple options for code block labels. Those work only if code block id starts with <code>lst:</code>, e.g. <code>{#lst:label}</code></p>
+<h2 id="caption-attribute"><code>caption</code> attribute</h2>
+<p><code>caption</code> attribute will be treated as code block caption. If code block has both id and <code>caption</code> attributes, it will be treated as numbered code block.</p>
+<div id="lst:captionAttr" class="listing haskell">
+<p>Listing 4.1: Listing caption</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">main ::</span> <span class="dt">IO</span> ()
+main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot;</span></code></pre></div>
+</div>
+<p></p>
+<h2 id="table-style-captions">Table-style captions</h2>
+<p>Enabled with <code>codeBlockCaptions</code> metadata option. If code block is immediately adjacent to paragraph, starting with <code>Listing:</code> or <code>:</code>, said paragraph will be treated as code block caption.</p>
+<div id="lst:tableCaption" class="listing haskell">
+<p>Listing 4.2: Listing caption</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">main ::</span> <span class="dt">IO</span> ()
+main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot;</span></code></pre></div>
+</div>
+<h2 id="wrapping-div">Wrapping div</h2>
+<p>Wrapping code block without label in a div with id <code>lst:...</code> and class, starting with <code>listing</code>, and adding paragraph before code block, but inside div, will treat said paragraph as code block caption.</p>
+<div id="lst:wrappingDiv" class="listing haskell">
+<p>Listing 4.3: Listing caption</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">main ::</span> <span class="dt">IO</span> ()
+main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot;</span></code></pre></div>
+</div>
+<h1 id="chapter-5.-reference-lists">Chapter 5. Reference lists</h1>
 <p>It's also possible to show lists of figures and tables, like this:</p>
 <h2 id="list-of-figures">List of Figures</h2>
 <ol class="incremental">

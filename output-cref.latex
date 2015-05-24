@@ -1,69 +1,10 @@
-\documentclass[]{article}
-\usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-\else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-    \usepackage{xltxtra,xunicode}
-  \else
-    \usepackage{fontspec}
-  \fi
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \newcommand{\euro}{€}
-\fi
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\usepackage{longtable,booktabs}
-\usepackage{graphicx}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\ifxetex
-  \usepackage[setpagesize=false, % page size defined by xetex
-              unicode=false, % unicode breaks when used with xetex
-              xetex]{hyperref}
-\else
-  \usepackage[unicode=true]{hyperref}
-\fi
-\hypersetup{breaklinks=true,
-            bookmarks=true,
-            pdfauthor={},
-            pdftitle={},
-            colorlinks=true,
-            citecolor=blue,
-            urlcolor=blue,
-            linkcolor=magenta,
-            pdfborder={0 0 0}}
-\urlstyle{same}  % don't use monospace font for urls
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\setcounter{secnumdepth}{0}
-
-\date{}
-\usepackage{cleveref}
-
-\begin{document}
-
 This is a demo file for pandoc-crossref. With this filter, you can
 cross-reference figures (see
-\cref{fig:figure1, fig:figure2, fig:figure3}), display equations (see
+\cref{fig:figure1,fig:figure2,fig:figure3}), display equations (see
 \cref{eq:eqn1}) and tables (see \cref{tbl:table1})
+
+There is also support for code blocks, for example,
+\cref{lst:captionAttr,lst:tableCaption,lst:wrappingDiv}
 
 \section{Chapter 1. Figures}\label{chapter-1.-figures}
 
@@ -124,12 +65,77 @@ Content Cell & Content Cell\tabularnewline
 \bottomrule
 \end{longtable}
 
-\section{Chapter 4. Reference lists}\label{chapter-4.-reference-lists}
+\section{Chapter 4. Code blocks}\label{chapter-4.-code-blocks}
+
+There are a couple options for code block labels. Those work only if
+code block id starts with \texttt{lst:}, e.g. \texttt{\{\#lst:label\}}
+
+\subsection{\texorpdfstring{\texttt{caption}
+attribute}{caption attribute}}\label{caption-attribute}
+
+\texttt{caption} attribute will be treated as code block caption. If
+code block has both id and \texttt{caption} attributes, it will be
+treated as numbered code block.
+
+\begin{codelisting}
+\caption{Listing caption}
+
+\hyperdef{}{lst:captionAttr}{\label{lst:captionAttr}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
+\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
+\end{Highlighting}
+\end{Shaded}
+
+\end{codelisting}
+
+\pagebreak
+
+\subsection{Table-style captions}\label{table-style-captions}
+
+Enabled with \texttt{codeBlockCaptions} metadata option. If code block
+is immediately adjacent to paragraph, starting with \texttt{Listing:} or
+\texttt{:}, said paragraph will be treated as code block caption.
+
+\begin{codelisting}
+
+\caption{Listing caption}
+
+\hyperdef{}{lst:tableCaption}{\label{lst:tableCaption}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
+\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
+\end{Highlighting}
+\end{Shaded}
+
+\end{codelisting}
+
+\subsection{Wrapping div}\label{wrapping-div}
+
+Wrapping code block without label in a div with id \texttt{lst:...} and
+class, starting with \texttt{listing}, and adding paragraph before code
+block, but inside div, will treat said paragraph as code block caption.
+
+\begin{codelisting}
+
+\caption{Listing caption}
+
+\hyperdef{}{lst:wrappingDiv}{\label{lst:wrappingDiv}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
+\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
+\end{Highlighting}
+\end{Shaded}
+
+\end{codelisting}
+
+\section{Chapter 5. Reference lists}\label{chapter-5.-reference-lists}
 
 It's also possible to show lists of figures and tables, like this:
 
 \listoffigures
 
 \listoftables
-
-\end{document}
