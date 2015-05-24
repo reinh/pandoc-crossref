@@ -1,23 +1,23 @@
-all: filter pdf latex html md
+all: demo.md pdf latex html md
 	git commit -a -m "Update examples"
 
-filter:
+demo.md:
 	git checkout master demo.md
 
-pdf: filter
+pdf:
 	pandoc -t latex --filter pandoc-crossref -o output.pdf -i demo.md
 	pandoc -t latex --filter pandoc-crossref -o output-chapters.pdf -i demo.md --chapters
 	pandoc -t latex --filter pandoc-crossref -o output-cref.pdf -i demo.md -M cref=True
 
-latex: filter
+latex:
 	pandoc -t latex --filter pandoc-crossref -o output.latex -i demo.md
 	pandoc -t latex --filter pandoc-crossref -o output-chapters.latex -i demo.md --chapters
 	pandoc -t latex --filter pandoc-crossref -o output-cref.latex -i demo.md -M cref=True
 
-html: filter
+html:
 	pandoc -s -t html --filter pandoc-crossref -o output.html -i demo.md
 	pandoc -s -t html --filter pandoc-crossref -o output-chapters.html -i demo.md -M chapters=True
 
-md: filter
+md:
 	pandoc -t markdown --filter pandoc-crossref -o output.md -i demo.md
 	pandoc -t markdown --filter pandoc-crossref -o output-chapters.md -i demo.md -M chapters=True
