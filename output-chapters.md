@@ -4,6 +4,17 @@ eq. 2.1) and tables (see tbl. 3.1)
 
 There is also support for code blocks, for example, lsts. 4.1-4.3
 
+It's possible to capitalize reference prefixes, like this: Fig. 1.1.
+
+In case of multiple references, capitalization is determined by first
+reference. Figs. 1.1, 1.2 is capitalized, while figs. 1.1, 1.2 is not.
+
+It is also possible to mix different references, like fig. 1.1,
+tbl. 3.1, lsts. 4.1, 4.2, figs. 1.2, 1.3, which will be grouped in order
+they are specified. You can even intermix this with regular citations,
+although it's not recommended: fig. 1.1, tbl. 3.1,
+[@unprocessedCitation]
+
 Chapter 1. Figures
 ==================
 

@@ -6,6 +6,20 @@ cross-reference figures (see
 There is also support for code blocks, for example,
 \cref{lst:captionAttr,lst:tableCaption,lst:wrappingDiv}
 
+It's possible to capitalize reference prefixes, like this:
+\cref{fig:figure1}.
+
+In case of multiple references, capitalization is determined by first
+reference. \cref{fig:figure1,fig:figure2} is capitalized, while
+\cref{fig:figure2,fig:figure1} is not.
+
+It is also possible to mix different references, like
+\cref{fig:figure1}, \cref{tbl:table1},
+\cref{lst:captionAttr,lst:tableCaption}, \cref{fig:figure2,fig:figure3},
+which will be grouped in order they are specified. You can even intermix
+this with regular citations, although it's not recommended:
+\cref{fig:figure1}, \cref{tbl:table1}, {[}@unprocessedCitation{]}
+
 \section{Chapter 1. Figures}\label{chapter-1.-figures}
 
 \begin{figure}[htbp]

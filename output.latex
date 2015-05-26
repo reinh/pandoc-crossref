@@ -6,6 +6,21 @@ equations (see eq.~\ref{eq:eqn1}) and tables (see tbl.~\ref{tbl:table1})
 There is also support for code blocks, for example,
 lsts.~\ref{lst:captionAttr}, \ref{lst:tableCaption}, \ref{lst:wrappingDiv}
 
+It's possible to capitalize reference prefixes, like this:
+Fig.~\ref{fig:figure1}.
+
+In case of multiple references, capitalization is determined by first
+reference. Figs.~\ref{fig:figure1}, \ref{fig:figure2} is capitalized,
+while figs.~\ref{fig:figure2}, \ref{fig:figure1} is not.
+
+It is also possible to mix different references, like
+fig.~\ref{fig:figure1}, tbl.~\ref{tbl:table1},
+lsts.~\ref{lst:captionAttr}, \ref{lst:tableCaption},
+figs.~\ref{fig:figure2}, \ref{fig:figure3}, which will be grouped in
+order they are specified. You can even intermix this with regular
+citations, although it's not recommended: fig.~\ref{fig:figure1},
+tbl.~\ref{tbl:table1}, {[}@unprocessedCitation{]}
+
 \section{Chapter 1. Figures}\label{chapter-1.-figures}
 
 \begin{figure}[htbp]
