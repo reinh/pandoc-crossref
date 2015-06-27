@@ -1,10 +1,11 @@
-module Util.Template (Template,makeTemplate,applyTemplate) where
+module Text.Pandoc.Crossref.Util.Template
+       (Template, makeTemplate, applyTemplate) where
 
-import Text.Pandoc.Definition
-import Text.Pandoc.Generic
-import Text.Pandoc.Shared (normalizeInlines)
-import Data.Maybe
-import Util.Meta
+import           Data.Maybe
+import           Text.Pandoc.Crossref.Util.Meta
+import           Text.Pandoc.Definition
+import           Text.Pandoc.Generic
+import           Text.Pandoc.Shared             (normalizeInlines)
 
 type VarFunc = String -> Maybe MetaValue
 newtype Template = Template (VarFunc -> [Inline])

@@ -1,13 +1,10 @@
-module Util.ModifyMeta
-    (
-    modifyMeta
-    ) where
+module Text.Pandoc.Crossref.Util.ModifyMeta (modifyMeta) where
 
-import Text.Pandoc
-import Text.Pandoc.Builder
-import Util.Options
-import Util.Meta
-import Util.Util
+import           Text.Pandoc
+import           Text.Pandoc.Builder
+import           Text.Pandoc.Crossref.Util
+import           Text.Pandoc.Crossref.Util.Meta
+import           Text.Pandoc.Crossref.Util.Options
 
 modifyMeta :: Options -> Meta -> Meta
 modifyMeta opts meta

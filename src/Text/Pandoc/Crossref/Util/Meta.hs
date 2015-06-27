@@ -1,11 +1,11 @@
 {-# LANGUAGE CPP #-}
-module Util.Meta where
+module Text.Pandoc.Crossref.Util.Meta where
 
-import Text.Pandoc (readMarkdown)
-import Text.Pandoc.Shared (stringify)
-import Text.Pandoc.Definition
-import Data.Maybe (fromMaybe)
-import Data.Default
+import           Data.Default
+import           Data.Maybe             (fromMaybe)
+import           Text.Pandoc            (readMarkdown)
+import           Text.Pandoc.Definition
+import           Text.Pandoc.Shared     (stringify)
 
 getMetaList :: (Default a) => (MetaValue -> Maybe a) -> String -> Meta -> Int -> a
 getMetaList f name meta i = fromMaybe def $ lookupMeta name meta >>= getList i >>= f

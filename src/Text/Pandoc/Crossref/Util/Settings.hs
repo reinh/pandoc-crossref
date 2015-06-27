@@ -1,12 +1,12 @@
 {-# LANGUAGE CPP #-}
-module Util.Settings (getSettings, defaultMeta) where
+module Text.Pandoc.Crossref.Util.Settings (getSettings, defaultMeta) where
 
-import Text.Pandoc
-import Control.Exception (handle,IOException)
-import qualified Data.Map as M
-import Data.Monoid
+import           Control.Exception              (IOException, handle)
+import qualified Data.Map                       as M
+import           Data.Monoid
+import           Text.Pandoc
 
-import Util.Meta (getMetaString)
+import           Text.Pandoc.Crossref.Util.Meta (getMetaString)
 
 getSettings :: Meta -> IO Meta
 getSettings meta = do

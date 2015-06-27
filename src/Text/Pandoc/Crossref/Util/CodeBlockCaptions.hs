@@ -1,14 +1,12 @@
-module Util.CodeBlockCaptions
-    (
-    codeBlockCaptions
-    ) where
+module Text.Pandoc.Crossref.Util.CodeBlockCaptions
+       (codeBlockCaptions) where
 
-import Text.Pandoc.Definition
-import Text.Pandoc.Shared (normalizeSpaces)
-import Data.List (isPrefixOf, stripPrefix)
-import Data.Maybe (fromMaybe)
-import References.Types
-import Util.Options
+import           Data.List                         (isPrefixOf, stripPrefix)
+import           Data.Maybe                        (fromMaybe)
+import           Text.Pandoc.Crossref.Types
+import           Text.Pandoc.Crossref.Util.Options
+import           Text.Pandoc.Definition
+import           Text.Pandoc.Shared                (normalizeSpaces)
 
 codeBlockCaptions :: Options -> [Block] -> WS [Block]
 codeBlockCaptions opts x@(cb@(CodeBlock _ _):p@(Para _):xs)

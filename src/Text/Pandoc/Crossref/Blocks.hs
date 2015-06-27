@@ -1,18 +1,18 @@
-module References.Blocks (replaceBlocks) where
+module Text.Pandoc.Crossref.Blocks (replaceBlocks) where
 
-import Text.Pandoc.Definition
-import Text.Pandoc.Builder (text, toList)
-import Text.Pandoc.Shared (stringify, normalizeSpaces)
-import Control.Monad.State
-import Data.List
-import qualified Data.Map as M
+import           Control.Monad.State
+import           Data.List
+import qualified Data.Map                           as M
+import           Text.Pandoc.Builder                (text, toList)
+import           Text.Pandoc.Definition
+import           Text.Pandoc.Shared                 (normalizeSpaces, stringify)
 
-import Util.Accessor
-import References.Types
-import References.Accessors
-import Util.Util
-import Util.Options
-import Util.Template
+import           Text.Pandoc.Crossref.Accessors
+import           Text.Pandoc.Crossref.Types
+import           Text.Pandoc.Crossref.Util
+import           Text.Pandoc.Crossref.Util.Accessor
+import           Text.Pandoc.Crossref.Util.Options
+import           Text.Pandoc.Crossref.Util.Template
 
 replaceBlocks :: Options -> Block -> WS Block
 replaceBlocks opts x@(Header 1 _ _)

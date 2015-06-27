@@ -1,13 +1,13 @@
-import Text.Pandoc
-import Text.Pandoc.JSON
-import Text.Pandoc.Walk
-import Control.Monad.State
+import           Control.Monad.State
+import           Text.Pandoc
+import           Text.Pandoc.JSON
+import           Text.Pandoc.Walk
 
-import References
-import Util.Settings
-import Util.Options
-import Util.CodeBlockCaptions
-import Util.ModifyMeta
+import           Text.Pandoc.Crossref
+import           Text.Pandoc.Crossref.Util.CodeBlockCaptions
+import           Text.Pandoc.Crossref.Util.ModifyMeta
+import           Text.Pandoc.Crossref.Util.Options
+import           Text.Pandoc.Crossref.Util.Settings
 
 main :: IO ()
 main = toJSONFilter go

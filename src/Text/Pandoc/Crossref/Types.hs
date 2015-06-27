@@ -1,14 +1,10 @@
-module References.Types ( References(..)
-                        , WS
-                        , RefRec(..)
-                        , RefMap
-                        , def
-                        ) where
+module Text.Pandoc.Crossref.Types
+       (References(..), WS, RefRec(..), RefMap, def) where
 
-import qualified Data.Map as M
-import Text.Pandoc.Definition
-import Control.Monad.State
-import Data.Default
+import           Control.Monad.State
+import           Data.Default
+import qualified Data.Map               as M
+import           Text.Pandoc.Definition
 
 data RefRec = RefRec { refIndex :: (Int, Int)
                      , refTitle :: [Inline]

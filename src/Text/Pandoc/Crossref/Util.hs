@@ -1,7 +1,7 @@
-module Util.Util where
+module Text.Pandoc.Crossref.Util where
 
-import Text.Pandoc.Definition
-import Data.Char (toUpper, toLower, isUpper)
+import           Data.Char              (isUpper, toLower, toUpper)
+import           Text.Pandoc.Definition
 
 isFormat :: String -> Maybe Format -> Bool
 isFormat fmt (Just (Format f)) = takeWhile (`notElem` "+-") f == fmt

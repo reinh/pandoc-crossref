@@ -1,30 +1,33 @@
-{-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE FlexibleContexts      #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
 
-module Util.Options (Options(..), getOptions) where
-import Text.Pandoc.Definition
-import Util.Meta
-import Util.Template
-import Util.Util (capitalizeFirst)
-import Text.Pandoc.Walk
-import Data.Default
+module Text.Pandoc.Crossref.Util.Options (Options(..), getOptions)
+       where
+
+import           Data.Default
+import           Text.Pandoc.Crossref.Util          (capitalizeFirst)
+import           Text.Pandoc.Crossref.Util.Meta
+import           Text.Pandoc.Crossref.Util.Template
+import           Text.Pandoc.Definition
+import           Text.Pandoc.Walk
 -- import Control.Monad.Identity
 
-data Options = Options { useCleveref :: Bool
-                       , sepChapters :: Bool
-                       , useListings :: Bool
-                       , cbCaptions  :: Bool
-                       , figPrefix   :: Bool -> Int -> [Inline]
-                       , eqnPrefix   :: Bool -> Int -> [Inline]
-                       , tblPrefix   :: Bool -> Int -> [Inline]
-                       , lstPrefix   :: Bool -> Int -> [Inline]
-                       , chapDelim   :: [Inline]
-                       , rangeDelim  :: [Inline]
-                       , lofTitle    :: [Block]
-                       , lotTitle    :: [Block]
-                       , lolTitle    :: [Block]
-                       , outFormat   :: Maybe Format
-                       , figureTemplate :: Template
-                       , tableTemplate  :: Template
+data Options = Options { useCleveref     :: Bool
+                       , sepChapters     :: Bool
+                       , useListings     :: Bool
+                       , cbCaptions      :: Bool
+                       , figPrefix       :: Bool -> Int -> [Inline]
+                       , eqnPrefix       :: Bool -> Int -> [Inline]
+                       , tblPrefix       :: Bool -> Int -> [Inline]
+                       , lstPrefix       :: Bool -> Int -> [Inline]
+                       , chapDelim       :: [Inline]
+                       , rangeDelim      :: [Inline]
+                       , lofTitle        :: [Block]
+                       , lotTitle        :: [Block]
+                       , lolTitle        :: [Block]
+                       , outFormat       :: Maybe Format
+                       , figureTemplate  :: Template
+                       , tableTemplate   :: Template
                        , listingTemplate :: Template
                        }
 

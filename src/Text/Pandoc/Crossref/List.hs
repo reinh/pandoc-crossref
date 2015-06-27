@@ -1,13 +1,13 @@
-module References.List (listOf) where
+module Text.Pandoc.Crossref.List (listOf) where
 
-import Text.Pandoc.Definition
-import Control.Monad.State
-import Data.List
-import qualified Data.Map as M
+import           Control.Monad.State
+import           Data.List
+import qualified Data.Map                          as M
+import           Text.Pandoc.Definition
 
-import References.Types
-import Util.Util
-import Util.Options
+import           Text.Pandoc.Crossref.Types
+import           Text.Pandoc.Crossref.Util
+import           Text.Pandoc.Crossref.Util.Options
 
 listOf :: Options -> [Block] -> WS [Block]
 listOf Options{outFormat=f} x | isFormat "latex" f = return x

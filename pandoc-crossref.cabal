@@ -25,22 +25,21 @@ source-repository this
   location: https://github.com/lierdakil/pandoc-crossref
   tag: v0.1.2.1
 
-executable pandoc-crossref
-  main-is:             pandoc-crossref.hs
-  other-modules:       References
-                     , References.Accessors
-                     , References.Blocks
-                     , References.List
-                     , References.Refs
-                     , References.Types
-                     , Util.Settings
-                     , Util.Accessor
-                     , Util.Meta
-                     , Util.Options
-                     , Util.Template
-                     , Util.Util
-                     , Util.CodeBlockCaptions
-                     , Util.ModifyMeta
+library
+  exposed-modules:     Text.Pandoc.Crossref
+                     , Text.Pandoc.Crossref.Accessors
+                     , Text.Pandoc.Crossref.Blocks
+                     , Text.Pandoc.Crossref.List
+                     , Text.Pandoc.Crossref.Refs
+                     , Text.Pandoc.Crossref.Types
+                     , Text.Pandoc.Crossref.Util.Settings
+                     , Text.Pandoc.Crossref.Util.Accessor
+                     , Text.Pandoc.Crossref.Util.Meta
+                     , Text.Pandoc.Crossref.Util.Options
+                     , Text.Pandoc.Crossref.Util.Template
+                     , Text.Pandoc.Crossref.Util
+                     , Text.Pandoc.Crossref.Util.CodeBlockCaptions
+                     , Text.Pandoc.Crossref.Util.ModifyMeta
   other-extensions: CPP
   build-depends:       base >=4.2 && <5
                      , pandoc >= 1.13 && <1.15
@@ -50,29 +49,32 @@ executable pandoc-crossref
                      , yaml >= 0.8 && <0.9
                      , data-default >= 0.4 && <0.6
                      , bytestring >=0.9 && <0.11
-  hs-source-dirs:      ., src
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+
+executable pandoc-crossref
+  main-is:             pandoc-crossref.hs
+  other-extensions: CPP
+  build-depends:       base >=4.2 && <5
+                     , pandoc-crossref
+                     , pandoc >= 1.13 && <1.15
+                     , mtl >= 1.1 && <2.3
+                     , containers >= 0.1 && <0.6
+                     , pandoc-types >= 1.12.4.1 && < 1.13
+                     , yaml >= 0.8 && <0.9
+                     , data-default >= 0.4 && <0.6
+                     , bytestring >=0.9 && <0.11
+  hs-source-dirs:      .
   default-language:    Haskell2010
 
 Test-Suite test-pandoc-crossref
   Type:           exitcode-stdio-1.0
   Main-Is:        test-pandoc-crossref.hs
-  other-modules:       References
-                     , References.Accessors
-                     , References.Blocks
-                     , References.List
-                     , References.Refs
-                     , References.Types
-                     , Util.Settings
-                     , Util.Accessor
-                     , Util.Meta
-                     , Util.Options
-                     , Util.Template
-                     , Util.Util
-                     , Util.CodeBlockCaptions
-                     , Util.ModifyMeta
   other-extensions: CPP
-  hs-source-dirs: ., src
+  hs-source-dirs: .
   Build-Depends:   base >=4.2 && <5
+                 , pandoc-crossref
                  , pandoc >= 1.13 && <1.15
                  , mtl >= 1.1 && <2.3
                  , containers >= 0.1 && <0.6

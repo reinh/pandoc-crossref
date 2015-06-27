@@ -1,19 +1,20 @@
-module References.Refs (replaceRefs) where
+module Text.Pandoc.Crossref.Refs (replaceRefs) where
 
-import Text.Pandoc.Definition
-import Text.Pandoc.Shared (normalizeInlines, normalizeSpaces)
-import Control.Monad.State
-import Data.List
-import Data.Maybe
-import Data.Function
-import qualified Data.Map as M
-import Control.Arrow as A
+import           Control.Arrow                      as A
+import           Control.Monad.State
+import           Data.Function
+import           Data.List
+import qualified Data.Map                           as M
+import           Data.Maybe
+import           Text.Pandoc.Definition
+import           Text.Pandoc.Shared                 (normalizeInlines,
+                                                     normalizeSpaces)
 
-import Util.Accessor
-import References.Types
-import References.Accessors
-import Util.Util
-import Util.Options
+import           Text.Pandoc.Crossref.Accessors
+import           Text.Pandoc.Crossref.Types
+import           Text.Pandoc.Crossref.Util
+import           Text.Pandoc.Crossref.Util.Accessor
+import           Text.Pandoc.Crossref.Util.Options
 
 replaceRefs :: Options -> [Inline] -> WS [Inline]
 replaceRefs opts (Cite cits _:xs)
